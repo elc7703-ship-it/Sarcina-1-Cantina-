@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Exercitiul1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int nota;
+
+        // Folosim do-while pentru a repeta citirea până când se introduce 0
+        do {
+            System.out.print("Introduceți nota (0 pentru ieșire): ");
+            nota = scanner.nextInt();
+
+            if (nota == 0) {
+                System.out.println("Program încheiat.");
+            } else if (nota >= 1 && nota <= 4) {
+                System.out.println("nesatisfăcător");
+            } else if (nota >= 5 && nota <= 6) {
+                System.out.println("satisfăcător");
+            } else if (nota >= 7 && nota <= 8) {
+                System.out.println("bine");
+            } else if (nota >= 9 && nota <= 10) {
+                System.out.println("excelent");
+            } else {
+                System.out.println("Notă invalidă");
+            }
+        } while (nota != 0);
+
+        scanner.close();
+    }
+}
