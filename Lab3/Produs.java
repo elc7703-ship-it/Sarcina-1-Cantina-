@@ -42,23 +42,19 @@ public class Produs {
     public int getStoc() {
         return stoc;
     }
-
     public void setStoc(int stoc) {
         if (stoc < 0) {
             throw new IllegalArgumentException("Stocul nou nu poate fi negativ!");
         }
         this.stoc = stoc;
     }
-
     public double pretFinal() {
         return pretBaza;
     }
-
     @Override
     public String toString() {
         return "Produs [ID=" + id + ", denumire=" + denumire + ", pretBaza=" + pretBaza + " RON, stoc=" + stoc + "]";
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -66,17 +62,13 @@ public class Produs {
         Produs produs = (Produs) o;
         return id == produs.id || denumire.equalsIgnoreCase(produs.denumire);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(id, denumire);
     }
-
     public static void main(String[] args) {
         System.out.println("=== TESTARE ETAPA 2: Superclasa Produs ===");
-        
         try {
-            // Test 1: Crearea unor produse valide (verificare ID-uri automate: 1, 2, 3)
             Produs p1 = new Produs("Paste Carbonara", 45.0, 10);
             Produs p2 = new Produs("Burger Vită", 55.0, 5);
             Produs p3 = new Produs("Limonadă", 18.0); // Stoc implicit 0
@@ -85,7 +77,6 @@ public class Produs {
             System.out.println(p2);
             System.out.println(p3);
 
-            // Test 2: Verificare excepție pentru preț negativ (cerința de verificare din lab)
             System.out.println("\nSe testează validarea pentru preț negativ:");
             Produs pEroare = new Produs("Produs Invalid", -5.0, 10);
             
@@ -94,7 +85,6 @@ public class Produs {
         }
 
         try {
-            // Test 3: Verificare excepție pentru denumire vidă
             System.out.println("\nSe testează validarea pentru denumire vidă:");
             Produs pEroare2 = new Produs("", 20.0, 5);
             
