@@ -9,22 +9,33 @@ public class MeniuCombo extends Produs {
     }
     public void adaugaComponenta(Produs p) {
         this.componente.add(p);
-        recalculeazaPretSiDenumire();
+        recalculeazaPret();
     }
-    private void recalculeazaPretSiDenumire() {
+    private void recalculeazaPret() {
         double suma = 0;
         for (Produs p : componente) {
             suma += p.pretFinal();
         }
-        this.pretBaza = suma * 0.89; 
+        double reducereProcent = 10 + (1 % 6); // 11%
+        this.pretBaza = suma * (1 - reducereProcent / 100.0);
     }
+    public boolean esteDisponibil() {
+        for (Produs p : componente) {
+            if (p.getStoc() <= 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     @Override
     public double pretFinal() {
         return pretBaza;
     }
+
     @Override
     public String toString() {
         return "MeniuCombo [ID=" + getId() + ", denumire=" + denumire + ", pretFinal=" + pretFinal() 
-                + " RON, componente=" + componente.size() + "]";
+                + " RON, disponibil=" + esteDisponibil() + "]";
     }
 }
