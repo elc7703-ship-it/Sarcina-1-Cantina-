@@ -1,17 +1,11 @@
 package Lab3;
-
 import java.util.Objects;
-
 public class Produs {
-    // Contor static pentru generarea automată a ID-ului unic
     private static int contorId = 1;
-
     private final int id;
     protected String denumire;
     protected double pretBaza;
     protected int stoc;
-
-    // Constructorul principal care face toate validările
     public Produs(String denumire, double pretBaza, int stoc) {
         valideazaDate(denumire, pretBaza, stoc);
         this.id = contorId++;
@@ -19,13 +13,9 @@ public class Produs {
         this.pretBaza = pretBaza;
         this.stoc = stoc;
     }
-
-    // Constructor secundar care apelează constructorul principal prin this(...)
     public Produs(String denumire, double pretBaza) {
-        this(denumire, pretBaza, 0); // Stoc implicit 0 dacă nu este specificat
+        this(denumire, pretBaza, 0); 
     }
-
-    // Metodă privată de validare unică (aruncă excepție la date invalide)
     private void valideazaDate(String denumire, double pretBaza, int stoc) {
         if (denumire == null || denumire.trim().isEmpty()) {
             throw new IllegalArgumentException("Denumirea produsului nu poate fi nulă sau vidă!");
@@ -37,8 +27,6 @@ public class Produs {
             throw new IllegalArgumentException("Stocul nu poate fi negativ!");
         }
     }
-
-    // Gettere și Settere
     public int getId() {
         return id;
     }
@@ -62,18 +50,15 @@ public class Produs {
         this.stoc = stoc;
     }
 
-    // Metoda pretFinal întoarce prețul de bază; va fi suprascrisă în subclase
     public double pretFinal() {
         return pretBaza;
     }
 
-    // Suprascriere toString()
     @Override
     public String toString() {
         return "Produs [ID=" + id + ", denumire=" + denumire + ", pretBaza=" + pretBaza + " RON, stoc=" + stoc + "]";
     }
 
-    // Suprascriere equals() bazată pe id sau denumire
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -87,7 +72,6 @@ public class Produs {
         return Objects.hash(id, denumire);
     }
 
-    // Punctul de intrare (main) integrat direct în clasă pentru execuție facilă
     public static void main(String[] args) {
         System.out.println("=== TESTARE ETAPA 2: Superclasa Produs ===");
         
