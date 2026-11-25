@@ -18,4 +18,8 @@ public class Bautura extends Produs {
     public String toString() {
         return super.toString().replace("]", "") + ", volum=" + volumMl + "ml, cuGheata=" + cuGheata + "]";
     }
+    @Override
+public String categorie() {
+    return "Băutură";
+}
 }

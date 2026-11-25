@@ -42,14 +42,14 @@ public class Bon {
         System.out.println("              BON FISCAL #" + numarBon);
         System.out.println("========================================");
         for (Produs p : produseComandate) {
-            System.out.println(" - " + p.getDenumire() + " ...... " + p.pretFinal() + " RON");
+            System.out.println(" - " + p.getDenumire() + " ...... " + p.pretFinal() + " MDL");
         }
         System.out.println("----------------------------------------");
-        System.out.println("Subtotal: " + subtotal + " RON");
+        System.out.println("Subtotal: " + subtotal + " MDL");
         if (reducere > 0) {
-            System.out.println("Reducere (Regula Proprie - 10% over 50 RON): -" + reducere + " RON");
+            System.out.println("Reducere (Regula Proprie - 10% over 50 MDL): -" + reducere + " MDL");
         }
-        System.out.println("TOTAL DE PLATĂ: " + total + " RON");
+        System.out.println("TOTAL DE PLATĂ: " + total + " MDL");
         if (cadou != null) {
             System.out.println("----------------------------------------");
             System.out.println("🎁 " + cadou);

@@ -22,7 +22,7 @@ public class Meniu {
     public void afiseazaMeniu() {
         System.out.println("--- " + denumire + " ---");
         for (Produs p : produse) {
-            System.out.println("  * " + p.getDenumire() + " (Preț bază: " + p.getPretBaza() + " RON)");
+            System.out.println("  * " + p.getDenumire() + " (Preț bază: " + p.getPretBaza() + " MDL)");
         }
     }
 }

@@ -18,4 +18,8 @@ public class Desert extends Produs {
     public String toString() {
         return super.toString().replace("]", "") + ", calorii=" + calorii + "kcal, portie=" + portie + "]";
     }
+    @Override
+public String categorie() {
+    return "Desert";
+}
 }

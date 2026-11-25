@@ -16,6 +16,6 @@ public class BauturaCalda extends Bautura {
     @Override
     public String toString() {
         return "BauturaCalda [ID=" + getId() + ", denumire=" + denumire + ", pretBaza=" + pretBaza 
-                + " RON, stoc=" + stoc + ", volum=" + volumMl + "ml, lapte=" + tipLapte + "]";
+                + " MDL, stoc=" + stoc + ", volum=" + volumMl + "ml, lapte=" + tipLapte + "]";
     }
 }

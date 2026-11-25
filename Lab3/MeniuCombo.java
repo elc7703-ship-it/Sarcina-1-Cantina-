@@ -36,6 +36,10 @@ public class MeniuCombo extends Produs {
     @Override
     public String toString() {
         return "MeniuCombo [ID=" + getId() + ", denumire=" + denumire + ", pretFinal=" + pretFinal() 
-                + " RON, disponibil=" + esteDisponibil() + "]";
+                + " MDL, disponibil=" + esteDisponibil() + "]";
     }
+    @Override
+public String categorie() {
+    return "Meniu Combo";
+}
 }

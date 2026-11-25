@@ -11,7 +11,7 @@ public class TestEtapa3 {
             System.out.println(prajitura);
 
             BauturaCalda cafea = new BauturaCalda("Latte Macchiato", 12.0, 20, 250, TipLapte.OVAZ);
-            System.out.println(cafea + " | Preț final: " + cafea.pretFinal() + " RON");
+            System.out.println(cafea + " | Preț final: " + cafea.pretFinal() + " MDL");
 
             MeniuCombo comboPranz = new MeniuCombo("Combo Prânz", 5);
             comboPranz.adaugaComponenta(ciorba);

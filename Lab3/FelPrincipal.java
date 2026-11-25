@@ -18,4 +18,8 @@ public class FelPrincipal extends Produs {
     public String toString() {
         return super.toString().replace("]", "") + ", gradPicant=" + gradPicant + ", gramaj=" + gramaj + "g]";
     }
+    @Override
+public String categorie() {
+    return "Fel Principal";
+}
 }

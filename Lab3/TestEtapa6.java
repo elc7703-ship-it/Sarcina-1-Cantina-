@@ -12,7 +12,7 @@ public class TestEtapa6 {
             meniuDimineata.afiseazaMeniu();
             meniuZilei.afiseazaMeniu();
 
-            System.out.println("\n-> Modificăm prețul bazei cafelei la 12.5 RON...");
+            System.out.println("\n-> Modificăm prețul bazei cafelei la 12.5 MDL...");
             meniuDimineata = null;
             System.gc(); // Garbage collection hint
             System.out.println("\n-> Meniul dimineții a fost setat la null.");

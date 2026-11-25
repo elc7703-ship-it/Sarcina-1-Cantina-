@@ -33,7 +33,7 @@ public class Cantina {
             return;
         }
         for (Produs p : produse) {
-            System.out.println("- " + p + " | Preț final: " + p.pretFinal() + " RON");
+            System.out.println("- " + p + " | Preț final: " + p.pretFinal() + " MDL");
         }
     }
     public double calculeazaValoareTotalaStoc() {
