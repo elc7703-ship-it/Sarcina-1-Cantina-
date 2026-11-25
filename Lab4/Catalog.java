@@ -1,9 +1,9 @@
 package Lab4;
-
 import Lab3.Produs;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 public class Catalog {
@@ -24,7 +24,7 @@ public class Catalog {
             return;
         }
         for (Produs p : produse) {
-            System.out.printf("- [%s] %s | Preț bază: %.2f MDL | Preț final: %.2f MDL | Stoc: %d%n",
+            System.out.printf("- [%s] %s | Preț bază: %.2f RON | Preț final: %.2f RON | Stoc: %d%n",
                     p.categorie(),
                     p.getDenumire(),
                     p.getPretBaza(),
@@ -52,6 +52,23 @@ public class Catalog {
             }
         }
         return filtrate;
+    }
+    public List<Produs> sortateNatural() {
+        List<Produs> copie = new ArrayList<>(produse);
+        Collections.sort(copie);
+        return copie;
+    }
+    public List<Produs> sortateDupaDenumire() {
+        List<Produs> copie = new ArrayList<>(produse);
+        copie.sort(Comparator.comparing(Produs::getDenumire, String.CASE_INSENSITIVE_ORDER)
+                .thenComparingDouble(Produs::pretFinal));
+        return copie;
+    }
+    public List<Produs> sortateDupaStocDescrescator() {
+        List<Produs> copie = new ArrayList<>(produse);
+        copie.sort(Comparator.comparingInt(Produs::getStoc).reversed()
+                .thenComparing(Produs::getDenumire, String.CASE_INSENSITIVE_ORDER));
+        return copie;
     }
     @Override
     public String toString() {

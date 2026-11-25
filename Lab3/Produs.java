@@ -1,5 +1,5 @@
 package Lab3;
-public abstract class Produs {
+public abstract class Produs implements Comparable<Produs> {
     private static int contorId = 1;
     private final int id;
     protected String denumire;
@@ -20,6 +20,7 @@ public abstract class Produs {
         this.pretBaza = pretBaza;
         this.stoc = stoc;
     }
+
     public int getId() {
         return id;
     }
@@ -53,5 +54,16 @@ public abstract class Produs {
                 + ", pretBaza=" + pretBaza + " MDL"
                 + ", pretFinal=" + pretFinal() + " MDL"
                 + ", stoc=" + stoc;
+    }
+    @Override
+    public int compareTo(Produs altul) {
+        if (altul == null) {
+            throw new NullPointerException("Nu se poate compara cu null.");
+        }
+        int cmpPret = Double.compare(this.pretFinal(), altul.pretFinal());
+        if (cmpPret != 0) {
+            return cmpPret;
+        }
+        return this.denumire.compareToIgnoreCase(altul.denumire);
     }
 }
